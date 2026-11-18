@@ -1,0 +1,34 @@
+#include<iostream>
+using namespace std;
+class vehicle{
+    private:
+    char regnumber[20];
+    char model[30];
+    float rentalprice;
+    public:
+    void inputdetails(){
+        cout<<"enter registration number";
+        cin>>regnumber;
+        cout<<"enter vehicle model";
+        cin>>model;
+        cout<<"enter the rental price";
+        cin>>rentalprice;
+    }
+    void displayrentalinformation(int days){
+        float rentalcharges=rentalcharges*days;
+        cout<<"registration number"<<regnumber<<endl;
+        cout<<"mode"<<model<<endl;
+        cout<<"rental price"<<rentalprice<<endl;
+        cout<<"days rented"<<days<<endl;
+        cout<<"rental charges"<<rentalcharges<<endl;
+
+    }
+};
+int main(){
+    vehicle car;
+    int days;
+    car.inputdetails();
+    cout<<"enter no of days";
+    cin>>days;
+    car.displayrentalinformation(days);
+}
