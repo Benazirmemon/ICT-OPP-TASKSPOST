@@ -1,0 +1,46 @@
+#include <iostream>
+using namespace std;
+
+class Employee {
+private:
+    int empID;
+    char name[30];
+    float basicSalary;
+    float bonus;
+
+    
+    float calculateFinalSalary() {
+        return basicSalary + bonus;
+    }
+
+public:
+    void setEmployeeData() {
+        cout << "Enter Employee ID: ";
+        cin >> empID;
+
+        cout << "Enter Employee Name : ";
+        cin >> name;
+
+        cout << "Enter Basic Salary: ";
+        cin >> basicSalary;
+
+        cout << "Enter Bonus: ";
+        cin >> bonus;
+    }
+
+    void displayDetails() {
+        cout << "\n Employee Salary Slip" << endl;
+        cout << "Employee ID:  " << empID << endl;
+        cout << "Name:         " << name << endl;
+        cout << "Final Salary: " << calculateFinalSalary() << endl;
+    }
+};
+
+int main() {
+    Employee emp;
+
+    emp.setEmployeeData();
+    emp.displayDetails();
+
+    return 0;
+}
