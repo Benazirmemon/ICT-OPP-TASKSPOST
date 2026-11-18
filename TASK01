@@ -1,0 +1,60 @@
+#include<iostream>
+using namespace std;
+class BMI{
+    private:
+    float weight;
+    float height;
+    float bmivalue;
+    int status;
+    public:
+    void getinput(){
+        cout<<"enter weight";
+        cin>>weight;
+        while(weight<=0){
+            cout<<"invalid weight.weight must be positive";
+            cin>>weight;
+        }
+        cout<<"enter height";
+        cin>>height;
+        while(height<=0){
+            cout<<"invalid height.height must be positive";
+            cin>>height;
+        }
+}
+void calculateBMI(){
+    bmivalue=weight/(height*height);
+    }
+    void findstatus(){
+        if(bmivalue<18.5){
+            status==1;
+        }
+        else if(bmivalue<25){
+            status==2;
+        }
+        else if( bmivalue>=25 && bmivalue<30){
+            status==3;
+        } 
+        else{
+            status==4;
+        }
+}
+void printstatus(){
+    cout<<"\nbmivalue"<<bmivalue<<endl;
+    cout<<"status";
+    if(status==1)
+    cout<<"underweight"<<endl;
+    else if(status==2)
+    cout<<"normal"<<endl;
+    else if(status==3)
+    cout<<"overweight"<<endl;
+    else
+    cout<<"obese"<<endl;
+}
+};
+int main(){
+    BMI obj;
+    obj.getinput();
+    obj.calculateBMI();
+    obj.findstatus();
+    obj.printstatus();
+}
