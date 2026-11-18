@@ -1,0 +1,51 @@
+#include <iostream>
+using namespace std;
+
+class Employee {
+private:
+    int empID;       
+    float salary;     
+
+public:
+    char name[30];       
+    char department[30]; 
+
+
+    void setConfidentialData(int id, float sal) {
+        empID = id;
+        salary = sal;
+    }
+
+    void displayRecord() {
+        cout << "\n--- Employee Record ---" << endl;
+        cout << "Employee ID: " << empID << endl;
+        cout << "Name:        " << name << endl;
+        cout << "Department:  " << department << endl;
+        cout << "Salary:      " << salary << endl;
+    }
+};
+
+int main() {
+    Employee emp;
+    int id;
+    float sal;
+
+    cout << "Enter Employee ID: ";
+    cin >> id;
+
+    cout << "Enter Employee Name ";
+    cin >> emp.name;
+
+    cout << "Enter Department: ";
+    cin >> emp.department;
+
+    cout << "Enter Salary: ";
+    cin >> sal;
+
+    
+    emp.setConfidentialData(id, sal); 
+
+    emp.displayRecord();
+
+
+}
